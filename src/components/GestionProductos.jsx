@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import { supabase } from '../supabaseClient';
-import EditProductModal from './EditProductModal'; // Crearemos este componente después
+import EditProductModal from './EditProductModal'; 
 
 export default function GestionProductos() {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [editingProduct, setEditingProduct] = useState(null); // Producto que se está editando
+  const [editingProduct, setEditingProduct] = useState(null); 
 
   useEffect(() => {
     fetchProductos();
@@ -42,8 +42,8 @@ export default function GestionProductos() {
   };
   
   const handleSave = () => {
-    setEditingProduct(null); // Cierra el modal
-    fetchProductos(); // Vuelve a cargar los productos para ver los cambios
+    setEditingProduct(null); 
+    fetchProductos(); 
   };
 
   if (loading) {

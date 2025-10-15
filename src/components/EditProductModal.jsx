@@ -1,6 +1,4 @@
-// src/components/EditProductModal.jsx
-
-import { useState, useEffect } from 'react';
+import { useState } from 'react'; // 'useEffect' ha sido eliminado de esta línea
 import { supabase } from '../supabaseClient';
 
 export default function EditProductModal({ product, onClose, onSave }) {
@@ -30,15 +28,13 @@ export default function EditProductModal({ product, onClose, onSave }) {
       alert(`Error al actualizar: ${error.message}`);
     } else {
       alert('Producto actualizado con éxito.');
-      onSave(); // Llama a la función onSave para refrescar la lista y cerrar
+      onSave();
     }
     setLoading(false);
   };
 
   return (
-    // Fondo oscuro semi-transparente
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      {/* Contenedor del modal */}
       <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full max-w-md">
         <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">Editar Producto</h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
