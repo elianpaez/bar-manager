@@ -36,7 +36,7 @@ export default function App() {
               <Routes>
                 <Route path="/" element={<PaginaVenta />} />
                 <Route path="/agregar-producto" element={<AgregarProducto />} />
-                {/* 3. AÑADE LA NUEVA RUTA */}
+                {}
                 <Route path="/productos" element={<GestionProductos />} />
                 <Route path="/reporte-ventas" element={<VentasPorDia />} />
               </Routes>

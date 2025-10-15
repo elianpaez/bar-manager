@@ -20,7 +20,7 @@ export default function VentasPorDia() {
     const { data, error } = await supabase
       .from("ventas")
       .select("*, productos(nombre, precio)")
-      .eq('fecha', fecha) // <-- Asegúrate que la consulta usa la columna 'fecha'
+      .eq('fecha', fecha) 
       .order('id', { ascending: false });
 
     if (error) {
